@@ -1,0 +1,49 @@
+.tree-container {
+    font-family: Arial, sans-serif;
+  }
+
+  .tree-node {
+    margin-left: 20px;
+  }
+
+  .tree-node-header {
+    cursor: pointer;
+  }
+
+  .tree-node-header:hover {
+    color: #007bff;
+  }
+
+  .toggle-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    border: solid 1px #007bff;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  .toggle-icon.closed::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    margin: 3px auto;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+
+  .toggle-icon.open::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 1px auto;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+
+  .tree-node-children {
+    margin-left: 20px;
+  }

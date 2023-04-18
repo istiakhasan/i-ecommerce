@@ -1,0 +1,168 @@
+@import '../../common.scss';
+.shop_container{
+    padding: 0 20%;
+    .shop_wraper {
+
+        display: grid;
+        grid-gap: 30px;
+        margin-top: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+        .product_card {
+            min-height: 200px;
+            height: auto;
+            object-fit: cover;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+
+            &:hover .hover_image {
+                transition: .4s ease;
+                left: 0;
+                cursor: pointer;
+            }
+            &:hover .card_icon_wraper {
+                opacity: 1;
+                transition: .6s ease-in-out;
+            }
+
+            .card_icon_wraper {
+                margin-right: 5px;
+                position: absolute;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                color: white;
+                z-index: 11111111;
+                opacity: 0;
+                top: 15%;
+                left: 4%;
+                .card_icon_hover {
+                    background: white;
+                    font-size: 30px !important;
+                    color: $--base-100;
+                    border-radius: 50%;
+                    padding: 4px;
+                    display: inline-block !important;
+
+                    &:hover {
+                        background: #FF324D;
+                        z-index: 111111;
+                        cursor: pointer;
+                        color: white;
+                    }
+                }
+            }
+            .image {
+
+                width: 100%;
+                height: 240px;
+
+            }
+            .hover_image {
+                position: absolute;
+                right: 0;
+                top: 0;
+                left: 100%;
+
+            }
+
+            article{
+                .shop_card_title {
+                    color: $--base-100;
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-family: sans-serif;
+
+                }
+
+                .shop_price {
+                    font-size: 16px;
+                    color: #FF324D;
+                    font-weight: 600;
+                }
+
+                .shop_price.prev {
+
+                    color: $--secondary-color;
+
+                }
+            }
+        }
+    }
+}
+
+// header
+.header_container{
+    display: flex;
+    // gap: 30px;
+    margin:40px 0;
+    .header_filter{
+        width: 263px;
+        background: #fff;
+        height: fit-content;
+        box-shadow:  0 5px 10px rgba(0,0,0,.1);
+        padding: 20px;
+
+        .category_list_wraper{
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            .category_title{
+              color: #525756;
+              font-size: 16px;
+              font-family: sans-serif;
+              padding: 8px ;
+              font-weight: 500;
+              cursor: pointer;
+              display: inline-block;
+            }
+
+            .category_icon{
+               width: 30px;
+
+            }
+        }
+        }
+
+        .slick_slider{
+            flex: 1;
+            height: 440px;
+            padding-left: 20px;
+
+            .carousel-inner{
+                height: 100% !important;
+                overflow: hidden !important;
+            }
+            .carousel-control-prev,.carousel-control-next{
+                opacity: 0 !important;
+            }
+
+        }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .shop_container{
+    padding: 0 2% ;
+  }
+    .shop_wraper {
+        display: grid ;
+        margin: 10px;
+
+        grid-gap: 30px ;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .image {
+        width: 100%;
+        height: 200px;
+    }
+    .card_icon_hover {
+        font-size: 25px !important;
+    }
+}
+
+.check_is_exist{
+    border:2px solid green ;
+}

@@ -1,0 +1,143 @@
+$--secondary-color: #687188;
+$--base-color: #fadcd9;
+$--bg-color: #f9f1f0;
+$--base-200: #fff;
+$--primary-color: #1D2224;
+$--base-100: #292b2c;
+
+
+@mixin flexItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin commonFontSize {
+    font-size: 12px;
+    font-weight: 600;
+}
+.container-fluid{
+    // --bs-gutter-x:0 !important;
+}
+.app {
+    // max-width: 1900px;
+    // margin: 0 auto;
+    background: #ffff;
+    min-height: 100vh;
+    gap: 0;
+}
+
+// form
+.common_form {
+    margin: 30px 50px;
+    width: 50%;
+}
+
+.common_input_group {
+    input,textarea {
+        outline: none;
+        border: 1px solid #DADCE0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 4px 0;
+        width: 100%;
+        &::placeholder{
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+    }
+    label{
+        font-size: 14px;
+        font-weight: 600;
+        color:  #898b8e;
+        margin: 4px 0;
+    }
+}
+
+
+h1:has(.active) {
+    background: red;
+}
+
+.common_button {
+    background: $--primary-color;
+    color: $--base-color;
+    padding: 4px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    margin: 4px 0;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+// table
+.table_wraper {
+    width: 400px;
+    overflow: auto;
+
+    table {
+        width: 100%;
+
+
+        & thead {
+            background: gray;
+            color: white;
+
+
+            & th {
+                // text-align: start;
+                width: 500px !important;
+            }
+        }
+
+        & tbody {
+            background: rgb(212, 208, 208);
+
+            & td {
+
+
+                width: 700px;
+
+
+                text-align: center;
+                width: 1000px;
+
+                &:first-child {
+                    position: sticky;
+                    left: 0;
+
+                }
+            }
+        }
+    }
+}
+
+// cart
+.cart_product_wraper {
+    padding: 10px;
+
+    .cart_product {
+        margin-bottom: 14px;
+        min-height: fit-content;
+        min-width: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            height: 50px;
+            width: 50px;
+            border: 1px solid green;
+        }
+    }
+}
+
+
+.purchase_button{
+    background: #FF324D !important;
+    width: 100% !important;
+}

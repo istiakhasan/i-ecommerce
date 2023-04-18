@@ -1,0 +1,28 @@
+.checkout_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    // table-layout: fixed;
+    vertical-align: start;
+
+    thead {
+
+
+        .head_border {
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+
+    }
+
+    tbody {
+        td {
+            padding: 10px;
+            width: 500px
+        }
+    }
+
+
+
+
+    ;
+}
