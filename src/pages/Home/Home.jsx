@@ -6,7 +6,7 @@ import "./home.css";
 import { useDispatch, useSelector } from "react-redux";
 import CommonModal from "../../component/CommonModal";
 import Header from "./Header";
-import Navbar from "../../shared/Navbar/Navbar"
+
 const Home = () => {
   const { cart } = useSelector((state) => state.CartReducers);
   const [photoGallary, setPhotoGallary] = useState({});
@@ -14,20 +14,20 @@ const Home = () => {
   const products = [
     {
       id: 1,
-      status: "sale",
-      title: "Black Smart Watches",
-      currentPrice: 119,
-      previousPrice: 140,
+      status: "sale",//e
+      title: "Black Smart Watches",//name
+      currentPrice: 119,//e
+      previousPrice: 140,//3
       discount: 25,
       rating: 4,
       size:"SM",
       s_color: "#FE9931",
-      quantity: 120,
+      quantity: 120,//qty
       images: [
         "https://www.apptus.com/static/images/resources/guides/beauty-ecommerce-10-tips/beauty-ecommerce-products.jpg",
         "https://sellercloud.com/a/2022/09/Beauty-Cosmetics-Face-3.jpg",
         "https://www.smallbizdaily.com/wp-content/uploads/2021/08/shutterstock_1754040101.jpg",
-      ],
+      ],//e
     },
     {
       id: 2,

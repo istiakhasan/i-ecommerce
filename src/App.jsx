@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Home from "./pages/Home/Home";
 import { instance } from "./Axios/Axios";
 import MainLayout from "./mainlayout/MainLayout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter,
   RouterProvider,
@@ -12,6 +14,7 @@ import Shop from "./pages/Shop/Shop";
 import Dashboard from "./pages/dashboard/Dashboard";
 import DashboardLanding from "./pages/dashboard/DashboardLanding";
 import Products from "./pages/dashboard/admindashboard/Products";
+import AllProducts from "./pages/products/AllProducts";
 
 function App() {
   const [treeArray, setArray] = useState([
@@ -83,8 +86,12 @@ function App() {
           element: <Checkout />,
         },
         {
+          path: "/all/products",
+          element: <AllProducts />,
+        },
+        {
           path: "*",
-          element: <h1>ex</h1>,
+          element: <h1>404 not found</h1>,
         },
       ],
     },
@@ -98,7 +105,7 @@ function App() {
         },
         {
           element: <Products />,
-          path:"products"
+          path: "products",
         },
       ],
     },
@@ -108,6 +115,7 @@ function App() {
       {/* <ParentNode node={treeArray} treeArray={treeArray} insertNode={insertNode} setArray={setArray}/> */}
 
       <RouterProvider router={router} />
+      <ToastContainer />
     </div>
   );
 }

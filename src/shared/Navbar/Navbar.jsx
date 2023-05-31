@@ -29,7 +29,7 @@ const Navbar = () => {
     {
       id: 2,
       title: "Products",
-      path: "/product",
+      path: "/all/products",
     },
     // {
     //   id: 3,

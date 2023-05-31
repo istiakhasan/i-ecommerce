@@ -1,15 +1,24 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ProductLanding = () => {
+  const [products, setProducts] = useState([]);
+  const loadAllProduct = async () => {
+    const res = await fetch("http://localhost:5000/api/v1/product");
+    const data = await res.json();
+    setProducts(data);
+  };
+  useEffect(() => {
+    loadAllProduct();
+  }, []);
   return (
-    <div>
-      <div className="common_table">
+    <div style={{ height: "700px", overflow: "scroll", overflowX: "hidden" }}>
+      <div className="common_table ">
         <table>
           <thead>
             <tr>
               <th>1</th>
-              <th>Product</th>
+              <th>Image</th>
               <th>Name</th>
               <th className="text-center">Size</th>
               <th className="text-center">Stock</th>
@@ -19,8 +28,9 @@ const ProductLanding = () => {
             </tr>
           </thead>
           <tbody>
-            {[...Array(10).keys()].map((item) => (
+            {products?.map((item) => (
               <tr>
+                {console.log(item, "item")}
                 <td style={{ width: "50px" }}>
                   <input type="checkbox" />
                 </td>
@@ -32,18 +42,15 @@ const ProductLanding = () => {
                     <img
                       className="w-100 h-100 "
                       style={{ objectFit: "cover" }}
-                      src="https://cdna.4imprint.com/qtz/homepage/categories/images21/drinkware0222.jpg"
+                      src={`data:image/png;base64,${item?.image?.img}`}
                       alt=""
                     />
                   </figure>
                 </td>
-                <td style={{ maxWidth: "150px" }}>
-                  Natural organic botany and scientific glassware, Alternative
-                  herb medicine, Natural skin care beauty products
-                </td>
+                <td style={{ maxWidth: "150px" }}>{item?.name}</td>
                 <td className="text-center">sm/md/lg /xl/xxl/2xl</td>
                 <td className="text-center">
-                  <strong>1850</strong>
+                  <strong>{item?.qty}</strong>
                 </td>
                 <td className="text-center">PCS</td>
                 <td style={{ maxWidth: "180px" }}>
